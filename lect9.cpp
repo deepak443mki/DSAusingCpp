@@ -1,7 +1,24 @@
 #include <iostream>
 #include <vector>
+#include <algorithm> // for reverse()
 using namespace std;
 
+
+// linear search
+int LinearSearch(vector<int> nums, int target){
+    for (int value : nums) {
+        if (value==target)
+        {
+            return 1 ;
+        }
+        
+    }
+    return -1;
+}
+
+void reverseCode(vector<int>& nums){
+    reverse(nums.begin(), nums.end());
+} 
 int main(){
     // similar to an Array but dynamic in nature means size is not fixed. dynamically resized.
     // STL (Standard Template Library) - 
@@ -44,6 +61,13 @@ int main(){
     // cout << score.size() << "\n";
     // cout <<score.capacity()<<"\n";
 
-    
+
+    vector<int> nums = {1, 2, 3, 45};
+    cout << LinearSearch(nums, 3) <<"\n";
+
+     reverseCode(nums);
+     for (int i : nums){
+        cout << i<<" ";
+     }
     return 0;
 }
